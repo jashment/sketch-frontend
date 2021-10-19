@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Button, TextField } from '@mui/material'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import { sendEmailAndPassword } from '../../api/apiLayer'
 
 const SignInForm = ({ currentPath }) => {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-  const history = useHistory()
+  // const history = useHistory()
 
   const handleEmailChange = (event) => {
     event.preventDefault();
@@ -23,9 +23,10 @@ const SignInForm = ({ currentPath }) => {
   const doSignUp = async (event) => {
     event.preventDefault()
     const user = await sendEmailAndPassword(email, password, currentPath)
+    console.log(user)
     // Sign in token only lasts 3600 seconds for user
     window.sessionStorage.setItem('user', JSON.stringify(user))
-    history.replace('/sketch')
+    // history.replace('/sketch')
   }
 
   return (
