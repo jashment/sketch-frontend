@@ -7,7 +7,7 @@ export const sendEmailAndPassword = async (email, password, path) => {
     const result = await axios.post(fullURL, { email, password })
     return result
   } catch (error) {
-    console.log('Error', error)
+    console.error('Error', error)
   }
   return null
 }
@@ -18,7 +18,7 @@ export const sendSketchToDB = async (uuid, sketch) => {
     const result = await axios.post(fullURL, { uuid, sketch })
     return result
   } catch (error) {
-    console.log('Error', error)
+    console.error('Error', error)
   }
   return null
 }
@@ -29,7 +29,7 @@ export const retrieveSketchesFromDB = async (uuid) => {
     const result = await axios.get(fullURL)
     return result
   } catch (error) {
-    console.log('Error', error)
+    console.error('Error', error)
   }
   return null
 }
@@ -40,7 +40,7 @@ export const deleteSketchFromDB = async (uuid, sketchId) => {
     const result = await axios.delete(fullURL, { data: { sketchId } })
     return result
   } catch (error) {
-    console.log('Error', error)
+    console.error('Error', error)
   }
   return null
 }

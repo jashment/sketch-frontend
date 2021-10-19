@@ -23,7 +23,7 @@ const SignInForm = ({ currentPath }) => {
   const doSignUp = async (event) => {
     event.preventDefault()
     const user = await sendEmailAndPassword(email, password, currentPath)
-    // Sign in oken only lasts 3600 seconds for user
+    // Sign in token only lasts 3600 seconds for user
     window.sessionStorage.setItem('user', JSON.stringify(user))
     history.replace('/sketch')
   }

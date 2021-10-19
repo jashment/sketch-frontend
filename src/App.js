@@ -14,7 +14,7 @@ const App = () => {
     <Router forceRefresh>
       <Switch>
         {parsedAuthUser
-          && <Route exact path="/sketch" component={Sketch} />}
+          && <Route path="/sketch" component={Sketch} />}
         <Route exact path="/" component={SignUp} />
         <Route path="/sign-in" component={SignIn} />
       </Switch>

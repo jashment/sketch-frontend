@@ -74,7 +74,6 @@ const Sketch = () => {
         <button className="btn" type="submit">Set Fill Color</button>
       </form>
       <FabricJSCanvas className="canvas" onReady={onReady} />
-      {/* {console.log(document.getElementsByClassName('canvas-container').item(0).children)} */}
     </div>
   );
 }
