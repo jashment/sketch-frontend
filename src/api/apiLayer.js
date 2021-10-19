@@ -5,7 +5,6 @@ export const sendEmailAndPassword = async (email, password, path) => {
   const fullURL = `${process.env.REACT_APP_BACKEND_URL}users/${path}`
   try {
     const result = await axios.post(fullURL, { email, password })
-    console.log(result)
     return result
   } catch (error) {
     console.error('Error', error)
