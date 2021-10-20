@@ -2,6 +2,7 @@ import React from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
 import SignInForm from './common/SignInForm'
+import * as routes from './common/routes'
 
 const SignIn = () => {
   const signInPath = 'sign-in'
@@ -11,7 +12,7 @@ const SignIn = () => {
       <h1>Sign In</h1>
       <SignInForm currentPath={signInPath} />
       <p>Don&apos;t have an account?</p>
-      <Link to="/">Sign Up</Link>
+      <Link to={routes.SIGNUP}>Sign Up</Link>
     </div>
   )
 }

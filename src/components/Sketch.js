@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { FabricJSCanvas, useFabricJSEditor } from 'fabricjs-react';
 import '../App.css'
-import { sendSketchToDB } from '../api/apiLayer';
+import { useHistory } from 'react-router';
+import { sendSketchToDB, signOut } from '../api/apiLayer';
 import DisplayDialog from './subcomponents/DisplayDialog';
+import * as routes from './common/routes'
 
 const Sketch = () => {
   const [color, setColor] = useState()
   const { editor, onReady } = useFabricJSEditor();
   const user = window.sessionStorage.getItem('user')
   const [open, setOpen] = useState(false);
+  const history = useHistory()
 
   const onAddCircle = () => {
     editor.addCircle();
@@ -56,6 +59,12 @@ const Sketch = () => {
     setOpen(false);
   }
 
+  const handleSignOut = async () => {
+    await signOut();
+    window.sessionStorage.removeItem('user')
+    history.push(routes.SIGNUP)
+  }
+
   return (
     <div style={{ height: '100vh', textAlign: 'center' }}>
       <h1>Sketch!</h1>
@@ -65,6 +74,7 @@ const Sketch = () => {
       <button className="btn" type="button" onClick={onDeleteAll}>Delete All</button>
       <button className="btn" type="button" onClick={saveCanvas}>Save Sketch</button>
       <button className="btn" type="button" onClick={handleClickOpen}>Choose Sketches</button>
+      <button className="signOutBtn" type="button" onClick={handleSignOut}>Sign Out</button>
       {open
         ? <DisplayDialog open={open} handleClose={handleClose} user={user} editor={editor} />
         : null}

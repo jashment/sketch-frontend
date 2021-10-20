@@ -5,6 +5,7 @@ import {
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Sketch from './components/Sketch'
+import * as routes from './components/common/routes'
 
 const App = () => {
   const authUser = window.sessionStorage.getItem('user')
@@ -14,9 +15,9 @@ const App = () => {
     <Router forceRefresh>
       <Switch>
         {parsedAuthUser
-          && <Route path="/sketch" component={Sketch} />}
-        <Route exact path="/" component={SignUp} />
-        <Route path="/sign-in" component={SignIn} />
+          && <Route path={routes.SKETCH} component={Sketch} />}
+        <Route exact path={routes.SIGNUP} component={SignUp} />
+        <Route path={routes.SIGNIN} component={SignIn} />
       </Switch>
     </Router>
   )

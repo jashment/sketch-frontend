@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button, TextField } from '@mui/material'
 import { useHistory } from 'react-router-dom'
 import { sendEmailAndPassword } from '../../api/apiLayer'
+import * as routes from './routes'
 
 const SignInForm = ({ currentPath }) => {
   const [email, setEmail] = useState()
@@ -25,8 +26,8 @@ const SignInForm = ({ currentPath }) => {
     const user = await sendEmailAndPassword(email, password, currentPath)
     console.log(user)
     // Sign in token only lasts 3600 seconds for user
-    window.sessionStorage.setItem('user', JSON.stringify(user))
-    history.replace('/sketch')
+    await window.sessionStorage.setItem('user', JSON.stringify(user))
+    history.replace(routes.SKETCH)
   }
 
   return (

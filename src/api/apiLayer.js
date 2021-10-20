@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Don't love 3 args but seems necessary
 export const sendEmailAndPassword = async (email, password, path) => {
-  const fullURL = `${process.env.REACT_APP_BACKEND_URL}users/${path}`
+  const fullURL = `${process.env.REACT_APP_BACKEND_URL}users${path}`
   try {
     const result = await axios.post(fullURL, { email, password })
     return result
@@ -38,6 +38,18 @@ export const deleteSketchFromDB = async (uuid, sketchId) => {
   const fullURL = `${process.env.REACT_APP_BACKEND_URL}sketch/${uuid}/delete`
   try {
     const result = await axios.delete(fullURL, { data: { sketchId } })
+    return result
+  } catch (error) {
+    console.error('Error', error)
+  }
+  return null
+}
+
+export const signOut = async () => {
+  const fullURL = `${process.env.REACT_APP_BACKEND_URL}users/sign-out`
+  try {
+    const result = await axios.delete(fullURL)
+    console.log(result)
     return result
   } catch (error) {
     console.error('Error', error)
