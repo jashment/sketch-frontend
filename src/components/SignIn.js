@@ -5,7 +5,7 @@ import SignInForm from './common/SignInForm'
 import * as routes from './common/routes'
 
 const SignIn = () => {
-  const signInPath = 'sign-in'
+  const signInPath = '/sign-in'
 
   return (
     <div className="formContainer">

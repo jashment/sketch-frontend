@@ -24,7 +24,6 @@ const SignInForm = ({ currentPath }) => {
   const doSignUp = async (event) => {
     event.preventDefault()
     const user = await sendEmailAndPassword(email, password, currentPath)
-    console.log(user)
     // Sign in token only lasts 3600 seconds for user
     await window.sessionStorage.setItem('user', JSON.stringify(user))
     history.replace(routes.SKETCH)

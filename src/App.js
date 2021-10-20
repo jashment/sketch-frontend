@@ -2,10 +2,10 @@ import * as React from 'react';
 import {
   Route, BrowserRouter as Router, Switch,
 } from 'react-router-dom';
+import * as routes from './components/common/routes'
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Sketch from './components/Sketch'
-import * as routes from './components/common/routes'
 
 const App = () => {
   const authUser = window.sessionStorage.getItem('user')

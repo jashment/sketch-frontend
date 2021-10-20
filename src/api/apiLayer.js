@@ -49,7 +49,6 @@ export const signOut = async () => {
   const fullURL = `${process.env.REACT_APP_BACKEND_URL}users/sign-out`
   try {
     const result = await axios.delete(fullURL)
-    console.log(result)
     return result
   } catch (error) {
     console.error('Error', error)
