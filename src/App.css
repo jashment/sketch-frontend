@@ -63,9 +63,40 @@ button {
   justify-content: center;
 }
 
+.displayDialog > div > div > div {
+  margin: auto;
+}
+
+div.entryForm > h1 {
+  padding-bottom: 25px;
+}
+
+div#root > div {
+  height: 100vh;
+  text-align: center;
+}
+
+button.submitBtn {
+  padding: 16.5px;
+}
+
 .formContainer {
   text-align: center;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 48px;
+  background: -webkit-linear-gradient(#36d1dc, #5b86e5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 15px;
+  text-align: center;
 }
 
 div.listItemBtn {
@@ -75,4 +106,10 @@ div.listItemBtn {
 div.listItemBtnDelete:hover {
   background-color: rgba(255, 0, 0, .25);
   /* color: white; */
+}
+
+.entryForm {
+  padding: 3em;
+  bottom: 50%;
+  position: absolute;
 }

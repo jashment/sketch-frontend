@@ -44,7 +44,7 @@ const DisplayDialog = ({
           <Close />
         </IconButton>
       </DialogTitle>
-      <DialogContent style={{ margin: 'auto' }}>
+      <DialogContent>
         <List sketches={sketches} editor={editor} handleClose={handleClose} />
       </DialogContent>
     </Dialog>

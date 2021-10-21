@@ -11,15 +11,18 @@ const App = () => {
   const authUser = window.sessionStorage.getItem('user')
   const parsedAuthUser = JSON.parse(authUser)
   return (
-    // Force refresh isn't ideal, but it serves it's perpose for now
-    <Router forceRefresh>
-      <Switch>
-        {parsedAuthUser
-          && <Route path={routes.SKETCH} component={Sketch} />}
-        <Route exact path={routes.SIGNUP} component={SignUp} />
-        <Route path={routes.SIGNIN} component={SignIn} />
-      </Switch>
-    </Router>
+    <>
+      <h1>Sketch!</h1>
+      {/* Force refresh isn't ideal, but it serves it's perpose for now */}
+      <Router forceRefresh>
+        <Switch>
+          {parsedAuthUser
+            && <Route path={routes.SKETCH} component={Sketch} />}
+          <Route exact path={routes.SIGNUP} component={SignUp} />
+          <Route path={routes.SIGNIN} component={SignIn} />
+        </Switch>
+      </Router>
+    </>
   )
 }
 

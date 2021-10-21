@@ -66,8 +66,7 @@ const Sketch = () => {
   }
 
   return (
-    <div style={{ height: '100vh', textAlign: 'center' }}>
-      <h1>Sketch!</h1>
+    <div>
       <button className="btn" type="button" onClick={onAddCircle}>Add circle</button>
       <button className="btn" type="button" onClick={onAddRectangle}>Add Rectangle</button>
       <button className="btn" type="button" onClick={onDeleteSelected}>Delete Selected</button>

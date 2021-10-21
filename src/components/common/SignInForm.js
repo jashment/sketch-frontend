@@ -3,6 +3,7 @@ import { Button, TextField } from '@mui/material'
 import { useHistory } from 'react-router-dom'
 import { sendEmailAndPassword } from '../../api/apiLayer'
 import * as routes from './routes'
+import '../../App.css'
 
 const SignInForm = ({ currentPath }) => {
   const [email, setEmail] = useState()
@@ -31,9 +32,9 @@ const SignInForm = ({ currentPath }) => {
 
   return (
     <form onSubmit={(event) => doSignUp(event)}>
-      <TextField onChange={(event) => handleEmailChange(event)} className="email" label="Email" />
-      <TextField onChange={(event) => handlePasswordChange(event)} className="password" label="Password" />
-      <Button type="submit" style={{ padding: '16.5px' }}>Submit</Button>
+      <TextField onChange={(event) => handleEmailChange(event)} className="email inputField" label="Email" />
+      <TextField onChange={(event) => handlePasswordChange(event)} className="password inputField" label="Password" />
+      <Button className="submitBtn" type="submit">Submit</Button>
     </form>
   )
 }
